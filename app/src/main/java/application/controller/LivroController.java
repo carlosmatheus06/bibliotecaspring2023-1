@@ -33,9 +33,19 @@ public class LivroController {
         Livro livro = new Livro();
         livro.setTitulo(titulo);
 
-
-
         livroRepo.save(livro);
         return "redirect:/livro/list";
+    }
+
+    @RequestMapping("/update")
+    public String update(Model model, @RequestParam("id") int id) {
+        Optional<Livro> livro = livroRepo.findById(id);
+
+        if(livro.isPresent()) {
+            model.addAttribute("livro", livro.get());
+            return "/livro/update";
+        }
+        return "redirect:/livro/list";
+
     }
 }
