@@ -14,6 +14,10 @@
             <label for="titulo">Título:</label>
             <input type="text" name="titulo" class="fomr-control" />
         </div>
+        <div class="form-group">
+            <label for="isbn">ISBN:</label>
+            <input type="text" name="isbn" class="fomr-control" />
+        </div>
         <br />
         <a href="/livro/list" class="btn btn-primary">Voltar</a>
             <button type="submit" class="btn btn-success">Salvar</button>
