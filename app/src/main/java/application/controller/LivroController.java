@@ -57,11 +57,13 @@ public class LivroController {
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(
         @RequestParam("id") int id,
-        @RequestParam("titulo") String titulo) {
+        @RequestParam("titulo") String titulo,
+        @RequestParam ("isbn") String isbn) {
         Optional<Livro> livro = livroRepo.findById(id);
 
         if(livro.isPresent()) {
             livro.get().setTitulo(titulo);
+            livro.get().setIsbn(isbn);
             livroRepo.save(livro.get());
         }
 
