@@ -3,26 +3,21 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8" />
-        <title>Novo Livro</title>
+        <title>Novo Gênero</title>
         <link href="/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
         <div class="container">
-        <h1>Novo Livro</h1>
-        <form action="/livro/insert" method="post">
-            <div class="form-group">
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo" class="fomr-control" />
+            <h1>Novo Gênero</h1>
+            <form action="/genero/insert" method="post">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" class="form-control" />
+                </div>
+                <br />
+                <a href="/genero/list" class="btn btn-primary" >Voltar</a>
+                <button type="submit" class="btn btn-success">Salvar</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="isbn">ISBN:</label>
-            <input type="text" name="isbn" class="fomr-control" />
-        </div>
-        <br />
-        <a href="/livro/list" class="btn btn-primary">Voltar</a>
-            <button type="submit" class="btn btn-success">Salvar</button>
-        </form>
-    </div>
     </body>
 </html>
-
