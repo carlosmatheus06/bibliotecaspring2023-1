@@ -50,4 +50,20 @@ public class GeneroController {
 
         return "redirect:/genero/list";
     }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(
+        @RequestParam("id") int id,
+        @RequestParam("nome") String nome
+    ) {
+        Optional<Genero> genero = generoRepo.findById(id);
+
+        if(genero.isPresent()) {
+            genero.get().setNome(nome);
+
+            generoRepo.save(genero.get());
+        }
+        
+        return "redirect:/genero/list";
+    }
 }
